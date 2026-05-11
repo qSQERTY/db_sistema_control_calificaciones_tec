@@ -1,0 +1,2 @@
+# db_sistema_control_calificaciones_tec
+arreglos
