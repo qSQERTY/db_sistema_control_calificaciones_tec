@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Anio;
+use App\Models\Año;
 use Illuminate\Http\Request;
 
-class AnioController extends Controller
+class AñoController extends Controller
 {
     public function index()
     {
-        $anios = Anio::orderBy('año', 'asc')->get();
+        $años = Año::orderBy('año', 'asc')->get();
 
         return view('dashboard', compact('años'));
     }
@@ -20,7 +20,7 @@ class AnioController extends Controller
             'año' => 'required|unique:años,año'
         ]);
 
-        Anio::create([
+        Año::create([
             'año' => $request->año
         ]);
 
