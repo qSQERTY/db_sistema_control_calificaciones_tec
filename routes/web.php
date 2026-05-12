@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EstudianteController;  
-use App\Http\Controllers\AñoController;
+use App\Http\Controllers\AnioController;
 
 Route::get('/', function () {
     return view('login');
@@ -20,5 +20,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 
 Route::resource('estudiantes', EstudianteController::class);
-Route::get('/dashboard', [AñoController::class, 'index']);
-Route::post('/años', [AñoController::class, 'store']);
+Route::get('/dashboard', [AniosController::class, 'index']);
+Route::post('/años', [AnioController::class, 'store']);

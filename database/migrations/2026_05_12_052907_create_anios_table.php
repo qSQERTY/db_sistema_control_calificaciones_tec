@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('años', function (Blueprint $table) {
+        Schema::create('anios', function (Blueprint $table) {
             $table->id();
 
-            $table->year('año')->unique();
+            $table->year('anio')->unique();
 
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('años');
+        Schema::dropIfExists('anios');
     }
 };
