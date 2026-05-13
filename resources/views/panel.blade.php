@@ -88,11 +88,19 @@ body{
 
     <div class="menu">
 
-        <a href="/dashboard">Dashboard</a>
-        <a href="/2024">2024</a>
-        <a href="/2025">2025</a>
-        <a href="/2026">2026</a>
-        <a href="/2027">2027</a>
+        @foreach($anios as $anio)
+    <a href="/panel/{{ $anio->anio }}">
+        {{ $anio->anio }}
+    </a>
+@endforeach
+
+        @if ($errors->any())
+    <div>
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </div>
+@endif
 
     </div>
 
@@ -131,6 +139,16 @@ body{
                 <p>Consultas y estadísticas</p>
             </div>
         </a>
+
+        <form action="/anios" method="POST">
+    @csrf
+
+    <input type="number" name="anio" placeholder="Ingresa un año">
+
+    <button type="submit">
+        Guardar
+    </button>
+</form>
 
     </div>
 

@@ -11,19 +11,26 @@ class AnioController extends Controller
     {
         $anios = Anio::orderBy('anio', 'asc')->get();
 
-        return view('dashboard', compact('anios'));
+    return view('panel', compact('anios'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'anio' => 'required|unique:años,anio'
+    $request->validate([
+        'anio' => 'required|unique:anios,anio'
         ]);
 
-        Anio::create([
-            'anio' => $request->anio
+    Anio::create([
+        'anio' => $request->anio
         ]);
 
-        return back();
+    return redirect('/panel');
+    }
+
+    public function show($anio)
+    {
+    $anios = Anio::orderBy('anio', 'asc')->get();
+
+    return view('anio', compact('anio', 'anios'));
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EstudianteController;  
 use App\Http\Controllers\AnioController;
+use App\Http\Controllers\ExamenController;
 
 Route::get('/', function () {
     return view('login');
@@ -20,5 +21,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 
 
 Route::resource('estudiantes', EstudianteController::class);
-Route::get('/dashboard', [AniosController::class, 'index']);
-Route::post('/años', [AnioController::class, 'store']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/anios', [AnioController::class, 'store']);
+Route::get('/panel', [AnioController::class, 'index'])
+    ->middleware('auth');
+Route::get('/panel/{anio}', [AnioController::class, 'show']);
+Route::get('/examenes', [ExamenController::class, 'index']);
+Route::post('/examenes', [ExamenController::class, 'store']);
