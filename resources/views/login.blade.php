@@ -45,14 +45,9 @@
                 <div class="neon-header">
                     <div class="cyber-logo">
                         <div class="logo-frame">
-                            <div class="logo-core">
-                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <path d="M20 4L36 12v16L20 36L4 28V12L20 4z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M14 14l12 12M26 14l-12 12" stroke="currentColor" stroke-width="1"/>
-                                </svg>
-                            </div>
-                            <div class="logo-scanner"></div>
+                            <div class="login-logo">
+                        <img src="{{ asset('images/logo/4.png') }}" alt="Logo" class="logo-img">
+</div>
                         </div>
                         <div class="neon-glow"></div>
                     </div>
@@ -68,7 +63,7 @@
                         <div class="field-frame">
                             <div class="field-border"></div>
                             <input type="email" id="email" name="email" required autocomplete="email" placeholder=" ">
-                            <label for="email">&gt; EMAIL_ADDRESS</label>
+                            <label for="email">&gt; CORREO ELECTRONICO</label>
                             <div class="cyber-scanner">
                                 <div class="scan-line"></div>
                             </div>
@@ -80,7 +75,7 @@
                         <div class="field-frame">
                             <div class="field-border"></div>
                             <input type="password" id="password" name="password" required autocomplete="current-password" placeholder=" ">
-                            <label for="password">&gt; ACCESS_CODE</label>
+                            <label for="password">&gt; CONTRASEÑA</label>
                             <button type="button" class="cyber-toggle" id="passwordToggle" aria-label="Toggle password visibility">
                                 <div class="toggle-frame">
                                     <svg class="eye-scan" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -100,21 +95,27 @@
 
                     <div class="cyber-options">
                         <label class="neon-checkbox">
-                            <input type="checkbox" id="remember" name="remember">
+                            <input 
+                            type="checkbox" 
+                            id="remember" 
+                            name="remember"
+                            {{ old('remember') ? 'checked' : '' }}>
                             <span class="checkbox-matrix">
                                 <div class="matrix-frame"></div>
                                 <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
                                     <path d="M1 4l2.5 2.5L9 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </span>
-                            <span class="checkbox-text">MAINTAIN_SESSION</span>
+                            <span class="checkbox-text">MANTENER_LA_SESION</span>
                         </label>
-                        <a href="#" class="cyber-link">RECOVER_ACCESS</a>
+                        <a href="{{ route('password.request') }}" class="cyber-link">
+                        RECUPERAR_ACCESO
+                        </a>
                     </div>
 
                     <button type="submit" class="neon-button">
                         <div class="btn-matrix"></div>
-                        <span class="btn-text">[ INITIALIZE_CONNECTION ]</span>
+                        <span class="btn-text">[ INICIAR SESION ]</span>
                         <div class="btn-loader">
                             <div class="matrix-loader">
                                 <div class="matrix-bar"></div>
@@ -129,33 +130,35 @@
 
                 <div class="cyber-divider">
                     <div class="divider-grid"></div>
-                    <span class="divider-text">[ ALT_PROTOCOLS ]</span>
+                    <span class="divider-text">[ OTROS METODOS DE INICIO ]</span>
                     <div class="divider-grid"></div>
                 </div>
 
                 <div class="matrix-social">
 
-    <button type="button" class="social-matrix">
+    <a href="{{ route('google.login') }}" class="social-matrix">
 
-        <div class="social-frame"></div>
+    <div class="social-frame"></div>
 
-        <svg width="18" height="18" viewBox="0 0 48 48">
-            <path fill="#EA4335" d="M24 9.5c3.54 0 6.72 1.22 9.22 3.6l6.9-6.9C35.9 2.4 30.4 0 24 0 14.6 0 6.4 5.4 2.4 13.3l8 6.2C12.2 13.4 17.6 9.5 24 9.5z"/>
-            <path fill="#4285F4" d="M46.1 24.5c0-1.6-.14-3.1-.4-4.5H24v9h12.5c-.54 2.9-2.18 5.3-4.64 6.9l7.2 5.6c4.2-3.9 6.99-9.7 6.99-17z"/>
-            <path fill="#FBBC05" d="M10.4 28.5A14.4 14.4 0 019.5 24c0-1.57.3-3.08.9-4.5l-8-6.2A24 24 0 000 24c0 3.9.94 7.58 2.6 10.8l7.8-6.3z"/>
-            <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2 1.3-4.6 2.1-8.7 2.1-6.4 0-11.8-3.9-13.7-9.4l-7.8 6.3C6.4 42.6 14.6 48 24 48z"/>
-        </svg>
+    <svg width="18" height="18" viewBox="0 0 48 48">
+        <path fill="#EA4335" d="M24 9.5c3.54 0 6.72 1.22 9.22 3.6l6.9-6.9C35.9 2.4 30.4 0 24 0 14.6 0 6.4 5.4 2.4 13.3l8 6.2C12.2 13.4 17.6 9.5 24 9.5z"/>
+        <path fill="#4285F4" d="M46.1 24.5c0-1.6-.14-3.1-.4-4.5H24v9h12.5c-.54 2.9-2.18 5.3-4.64 6.9l7.2 5.6c4.2-3.9 6.99-9.7 6.99-17z"/>
+        <path fill="#FBBC05" d="M10.4 28.5A14.4 14.4 0 019.5 24c0-1.57.3-3.08.9-4.5l-8-6.2A24 24 0 000 24c0 3.9.94 7.58 2.6 10.8l7.8-6.3z"/>
+        <path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.2-5.6c-2 1.3-4.6 2.1-8.7 2.1-6.4 0-11.8-3.9-13.7-9.4l-7.8 6.3C6.4 42.6 14.6 48 24 48z"/>
+    </svg>
 
-        <span>GOOGLE_LOGIN</span>
+    <span>GOOGLE_LOGIN</span>
 
-        <div class="social-glow"></div>
+    <div class="social-glow"></div>
 
-    </button>
+</a>
 
 </div>
                 <div class="matrix-signup">
-                    <span class="signup-prefix">[ NEW_USER_DETECTED ]</span>
-                    <a href="#" class="matrix-link">CREATE_PROFILE</a>
+                    <span class="signup-prefix">[ NUEVO_USUARIO ]</span>
+                    <a href="{{ route('register') }}" class="matrix-link">
+                    CREAR PERFIL
+                    </a>
                 </div>
 
                 <div class="cyber-success" id="successMessage">
@@ -171,8 +174,8 @@
                             </svg>
                         </div>
                     </div>
-                    <h3 class="success-title">[ CONNECTION_ESTABLISHED ]</h3>
-                    <p class="success-desc">Accessing neural interface...</p>
+                    <h3 class="success-title">[ CONECCION_ESTABLECIDA ]</h3>
+                    <p class="success-desc">Acceso a la interface...</p>
                 </div>
             </div>
         </div>

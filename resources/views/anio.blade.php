@@ -1,103 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Estudiantes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes por Año</title>
 
-<style>
+    <style>
 
 body{
-    background:#0a0a0a;
-    color:#39ff88;
+
+    background:rgb(10,10,10);
+
+    color:rgb(57,255,136);
+
     font-family:Consolas, monospace;
+
     padding:40px;
+
 }
+
+
+
+
 
 h1{
+
     margin-bottom:30px;
+
+    text-align:center;
+
+    color:rgb(57,255,136);
+
 }
 
-a{
-    text-decoration:none;
-}
 
-.btn{
-    background:#39ff88;
-    color:#000;
-    padding:12px 20px;
-    border-radius:8px;
-    font-weight:bold;
-}
+
+
 
 table{
+
     width:100%;
+
     border-collapse:collapse;
-    margin-top:30px;
+
+    margin-top:20px;
+
+    background:rgb(5,5,5);
+
+    box-shadow:
+    0 0 20px rgba(57,166,255,.25);
+
 }
+
+
+
+
 
 table th,
 table td{
-    border:1px solid #39ff88;
+
+    border:1px solid rgb(57,166,255);
+
     padding:15px;
+
     text-align:center;
+
 }
+
+
+
+
 
 table th{
-    background:#050505;
+
+    background:rgb(5,5,5);
+
+    color:rgb(57,255,136);
+
 }
+
+
+
+
 
 tr:hover{
+
     background:rgba(57,255,136,.08);
-}
-.dropdown{
-    position:relative;
+
 }
 
-.dropbtn{
-    background:#39ff88;
-    color:#000;
-    border:none;
-    padding:10px 15px;
-    cursor:pointer;
-    font-weight:bold;
-    border-radius:6px;
-}
 
-.dropdown-content{
-    display:none;
-    position:absolute;
-    background:#050505;
-    min-width:150px;
-    border:1px solid #39ff88;
-    z-index:10;
-}
-
-.dropdown-content a,
-.dropdown-content button{
-    color:#39ff88;
-    padding:12px;
-    text-decoration:none;
-    display:block;
-    background:none;
-    border:none;
-    width:100%;
-    text-align:left;
-    cursor:pointer;
-    font-family:Consolas, monospace;
-}
-
-.dropdown-content a:hover,
-.dropdown-content button:hover{
-    background:#39ff88;
-    color:#000;
-}
-
-.dropdown:hover .dropdown-content{
-    display:block;
-}
-
-.delete-btn{
-    font-size:15px;
-}
 
 </style>
+</head>
+<body>
+
+    <h1>Registro de Estudiantes por Año</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Año</th>
+                <th>Mes</th>
+                <th>Cantidad de Estudiantes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>2024</td>
+                <td>Enero</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Febrero</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Marzo</td>
+                <td>18</td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>Enero</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>Febrero</td>
+                <td>27</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

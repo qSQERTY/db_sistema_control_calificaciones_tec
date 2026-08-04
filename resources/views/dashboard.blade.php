@@ -42,13 +42,13 @@ body::before{
 .cyber-terminal{
     width:450px;
     height:620px;
-    border:2px solid #1aff73;
+    border:2px solid #1ae4ff;
     border-radius:12px;
     background:#020202;
     position:relative;
     box-shadow:
-        0 0 15px rgba(0,255,120,.4),
-        0 0 40px rgba(0,255,120,.2);
+        0 0 15px rgba(0, 255, 255, 0.98),
+        0 0 40px rgba(0, 132, 255, 0.5);
     overflow:hidden;
 }
 
@@ -56,7 +56,7 @@ body::before{
 
 .terminal-header{
     height:55px;
-    border-bottom:1px solid #1aff73;
+    border-bottom:1px solid #1ae4ff;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -140,7 +140,7 @@ body::before{
     background:linear-gradient(
         90deg,
         transparent,
-        rgba(57,255,136,.7),
+        rgba(22, 255, 255, 0.85),
         transparent
     );
     animation:scan 2s linear infinite;
@@ -164,7 +164,7 @@ body::before{
     font-weight:bold;
     letter-spacing:5px;
     margin-bottom:14px;
-    text-shadow:0 0 10px rgba(57,255,136,.5);
+    text-shadow:0 0 10px rgba(57, 248, 255, 0.69);
 }
 
 .subtitle{
@@ -193,7 +193,7 @@ body::before{
 
 .ring{
     position:absolute;
-    border:2px solid #39ff88;
+    border:2px solid #39ffff;
     border-radius:50%;
     inset:0;
     animation:pulse 2s infinite;
@@ -249,7 +249,7 @@ body::before{
     line-height:1.6;
     letter-spacing:3px;
     font-weight:bold;
-    text-shadow:0 0 10px rgba(57,255,136,.4);
+    text-shadow:0 0 10px rgba(57, 248, 255, 0.85);
 }
 
 .connection span{

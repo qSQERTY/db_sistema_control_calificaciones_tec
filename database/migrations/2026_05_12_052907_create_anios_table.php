@@ -6,23 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
-    {
-        Schema::create('anios', function (Blueprint $table) {
-            $table->id();
+{
+    Schema::create('anios', function (Blueprint $table) {
 
-            $table->year('anio')->unique();
+        $table->id();
 
-            $table->timestamps();
-        });
-    }
+        $table->year('anio')->unique();
 
-    /**
-     * Reverse the migrations.
-     */
+        $table->timestamps();
+
+    });
+}
+
+
     public function down(): void
     {
         Schema::dropIfExists('anios');

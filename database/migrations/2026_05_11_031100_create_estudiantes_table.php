@@ -19,7 +19,10 @@ return new class extends Migration
 
             $table->string('nombre_completo');
 
-            $table->string('carrera');
+            $table->foreignId('carrera_id')
+            ->constrained('carreras')
+            ->cascadeOnUpdate()
+            ->restrictOnDelete();
 
             $table->string('horario');
 
